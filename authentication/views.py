@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login # importation des fonctions 
 from . import forms
 
 def login_page(request):
-    forms = forms.LoginForm()
+    form = forms.LoginForm()
     message = ''
     if request.method == 'POST':
         form = forms.LoginForm(request.POST)

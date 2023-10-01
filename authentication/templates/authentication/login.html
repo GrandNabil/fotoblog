@@ -3,7 +3,7 @@
     <p>{{ message }}</p>
     <form method="post">
         {{form.as_p}}
-        {% crsf_token %}
+        {% csrf_token %}
         <button type="submit">Se connecter</button>
     </form>
 {% endblock content %}
