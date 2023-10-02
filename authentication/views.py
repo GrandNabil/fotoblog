@@ -1,7 +1,9 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout # importation des fonctions qui vont permetrre l'authentification
+from django.contrib.auth.decorators import login_required
 from . import forms
 
+@login_required
 def logout_user(request):
     logout(request)
     return redirect('login')
@@ -18,11 +20,9 @@ def login_page(request):
             )
             if user is not None:
                 login(request, user)
-                message = f'Bonjour, {user.username}! Vous êtes connectés.'
-            else:
-                message = 'Identifiants invalides'
-    return render(
-        request, 'authentication/login.html', context={'form': form, 'message': message})
+                return redirect('home')
+        message = 'Identifiants invalides'
+    return render(request, 'authentication/login.html', context={'form': form, 'message': message})
             
             
 
