@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout # importation des fonctions qui vont permetrre l'authentification
 from django.contrib.auth.decorators import login_required
+from django.views.generic import View
 from . import forms
 
 @login_required
@@ -8,11 +9,17 @@ def logout_user(request):
     logout(request)
     return redirect('login')
 
-def login_page(request):
-    form = forms.LoginForm()
-    message = ''
-    if request.method == 'POST':
-        form = forms.LoginForm(request.POST)
+class LoginPageView(View):
+    template_name = 'authentication/login.html'
+    form_class = forms.LoginForm
+    
+    def get(self, request):
+        form = self.form_class()
+        message = ''
+        return render(request, self.template_name, context={'form': form, 'message': message})
+    
+    def post(self, request):
+        form = self.form_class(request.POST)
         if form.is_valid():
             user = authenticate(
                 username = form.cleaned_data['username'],
@@ -22,7 +29,7 @@ def login_page(request):
                 login(request, user)
                 return redirect('home')
         message = 'Identifiants invalides'
-    return render(request, 'authentication/login.html', context={'form': form, 'message': message})
+        return render(request, 'authentication/login.html', context={'form': form, 'message': message})
             
             
 
