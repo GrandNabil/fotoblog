@@ -9,7 +9,7 @@ def logout_user(request):
     logout(request)
     return redirect('login')
 
-class LoginPageView(View):
+#class LoginPageView(View):
     template_name = 'authentication/login.html'
     form_class = forms.LoginForm
     
