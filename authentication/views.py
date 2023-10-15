@@ -1,36 +1,12 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout # importation des fonctions qui vont permetrre l'authentification
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LogoutView, PasswordChangeView
 from django.views.generic import View
+from django.urls import path
 from . import forms
 
-@login_required
-def logout_user(request):
-    logout(request)
-    return redirect('login')
-
-#class LoginPageView(View):
-    template_name = 'authentication/login.html'
-    form_class = forms.LoginForm
+class ThePasswordChangeView(PasswordChangeView):
+    template_name = 'authentication/password_change.html'
+    success_url = '/password_change_done'
     
-    def get(self, request):
-        form = self.form_class()
-        message = ''
-        return render(request, self.template_name, context={'form': form, 'message': message})
-    
-    def post(self, request):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            user = authenticate(
-                username = form.cleaned_data['username'],
-                password=form.cleaned_data['password'],
-            )
-            if user is not None:
-                login(request, user)
-                return redirect('home')
-        message = 'Identifiants invalides'
-        return render(request, 'authentication/login.html', context={'form': form, 'message': message})
-            
-            
-
-
