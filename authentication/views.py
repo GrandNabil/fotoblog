@@ -6,7 +6,5 @@ from django.views.generic import View
 from django.urls import path
 from . import forms
 
-class ThePasswordChangeView(PasswordChangeView):
-    template_name = 'authentication/password_change.html'
-    success_url = '/password_change_done'
+
     

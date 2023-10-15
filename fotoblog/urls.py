@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordChangeDoneView
-import authentication.views
 import blog.views
 
 
@@ -26,7 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LoginView.as_view( template_name = 'authentication/login.html', redirect_authenticated_user = True), name='login'),
     path('logout/', LogoutView.as_view(template_name = 'authentication/logged_out.html'), name='logout'),
-    path('password_change', authentication.views.ThePasswordChangeView.as_view(), name='password_change'),
+    path('password_change', PasswordChangeView.as_view(template_name = 'authentication/password_change.html'), name='password_change'),
+    path('password_change_done', PasswordChangeDoneView.as_view(template_name = 'authentication/password_change_done.html'), name='password_change_done'),
 
     path('home/', blog.views.home, name='home'),
 
