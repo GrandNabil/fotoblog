@@ -1,10 +1,24 @@
+from django.conf import settings
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout # importation des fonctions qui vont permetrre l'authentification
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import LogoutView, PasswordChangeView
-from django.views.generic import View
-from django.urls import path
+
+
 from . import forms
+
+
+def signup_page(request):
+    form = forms.SignupForm()
+    if request.method == 'POST':
+        form = forms.SignupForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect(settings.LOGIN_REDIRECT_URL)
+        
+    return render(request, 'authentication/signup.html', context={'form': form})
+
+
 
 
     
