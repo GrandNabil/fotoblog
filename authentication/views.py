@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.shortcuts import redirect, render
-from django.contrib.auth import authenticate, login, logout # importation des fonctions qui vont permetrre l'authentification
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login # importation des fonctions qui vont permetrre l'authentification
 
 
 from . import forms
