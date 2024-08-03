@@ -1,6 +1,7 @@
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from . import forms
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
 
 def login_page(request):
     form = forms.LoginForm()
@@ -19,3 +20,8 @@ def login_page(request):
                 message = 'Identifiants invalides.'
     return render(
         request, 'authentication/login.html', context={'form': form, 'message': message})
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
