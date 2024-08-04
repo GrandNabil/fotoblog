@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57907b97-8053-488a-9ef2-fb522148f7de" name="Changes" comment="migrations">
-      <change afterPath="$PROJECT_DIR$/authentication/forms.py" afterDir="false" />
+    <list default="true" id="57907b97-8053-488a-9ef2-fb522148f7de" name="Changes" comment="vue et chemin pour le login et le logout">
+      <change afterPath="$PROJECT_DIR$/authentication/templates/authentication/password_change_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication/templates/authentication/password_change_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fotoblog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/fotoblog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fotoblog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/fotoblog/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +56,12 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Grand Nabil\fotoblog\authentication\templates\authentication" />
+      <recent name="C:\Users\Grand Nabil\fotoblog" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -107,7 +118,47 @@
       <option name="project" value="LOCAL" />
       <updated>1722598808592</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ajout de forms.py pour le formulaire">
+      <option name="closed" value="true" />
+      <created>1722603807859</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1722603807859</updated>
+    </task>
+    <task id="LOCAL-00007" summary="la vue pour le formulaire du login">
+      <option name="closed" value="true" />
+      <created>1722603843235</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722603843235</updated>
+    </task>
+    <task id="LOCAL-00008" summary="workspace">
+      <option name="closed" value="true" />
+      <created>1722603865519</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1722603865519</updated>
+    </task>
+    <task id="LOCAL-00009" summary="templates de connexion et deconnexion">
+      <option name="closed" value="true" />
+      <created>1722718024452</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1722718024452</updated>
+    </task>
+    <task id="LOCAL-00010" summary="vue et chemin pour le login et le logout">
+      <option name="closed" value="true" />
+      <created>1722718065538</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1722718065538</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -116,6 +167,11 @@
     <MESSAGE value="configuration du modèle personnalisé dans settings.py" />
     <MESSAGE value="workplace et misc" />
     <MESSAGE value="migrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrations" />
+    <MESSAGE value="ajout de forms.py pour le formulaire" />
+    <MESSAGE value="la vue pour le formulaire du login" />
+    <MESSAGE value="workspace" />
+    <MESSAGE value="templates de connexion et deconnexion" />
+    <MESSAGE value="vue et chemin pour le login et le logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue et chemin pour le login et le logout" />
   </component>
 </project>
